@@ -37,12 +37,31 @@
 .v-locale--is-ltr {
   .theme-timeline {
     &.v-timeline {
+      .v-timeline-item {
+        min-height: 70px;
+        .v-card-title {
+          padding: 0;
+          line-height: 20px;
+        }
+        .v-timeline-item__body{
+          margin-bottom: 24px;
+        }
+        &:nth-child(2n) .v-timeline-item__body,
+        &:nth-child(2n+1) .v-timeline-item__opposite {
+          padding-inline-end: 12px;
+        }
+        &:nth-child(2n) .v-timeline-item__opposite,
+        &:nth-child(2n+1) .v-timeline-item__body {
+          padding-inline-start: 12px;
+        }
+      }
       .v-timeline-divider__dot {
         background: unset;
       }
-      .v-timeline-divider--fill-dot .v-timeline-divider__inner-dot {
-        height: 20px;
-        width: 20px;
+      .v-timeline-divider__dot--size-x-small {
+        height: 12px;
+        left: calc(50% - 12px) !important;
+        width: 12px;
         box-shadow: none;
       }
     }
